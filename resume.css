@@ -1,0 +1,285 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #0d1117;
+  color: #c9d1d9;
+  padding: 2rem;
+  overflow-x: hidden; /* Avoid horizontal scroll */
+}
+
+/* Custom Cursor */
+.custom-cursor {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: background-color 0.2s ease;
+}
+
+.custom-cursor.active {
+  background-color: #00a8ff;
+}
+
+/* Resume Container */
+.resume-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #161b22;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 168, 255, 0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: slideIn 1.2s ease-out;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #f1c40f;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  color: #00a8ff;
+}
+
+.contact-info {
+  list-style-type: none;
+  margin-top: 1rem;
+}
+
+.contact-info li {
+  display: inline-block;
+  margin-right: 1.5rem;
+  font-size: 1rem;
+}
+
+.contact-info i {
+  margin-right: 0.5rem;
+}
+
+/* Section Styling */
+.resume-section {
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.resume-section h2 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.resume-section h2::before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: #00a8ff;
+}
+
+.resume-item h3 {
+  font-size: 1.4rem;
+  color: #f1c40f;
+}
+
+.resume-item p {
+  font-size: 1rem;
+  margin: 0.5rem 0 1rem;
+  color: #c9d1d9;
+}
+
+.resume-item ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+}
+
+.resume-item ul li {
+  margin: 0.3rem 0;
+}
+
+/* Skills Section Animation */
+.skills-list {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+.skills-list li {
+  background-color: #00a8ff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  margin: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 6px rgba(0, 168, 255, 0.1);
+}
+
+.skills-list li:hover {
+  background-color: #f1c40f;
+  color: #0d1117;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(241, 196, 15, 0.4);
+}
+
+.skills-list li::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.7s ease;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.skills-list li:hover::before {
+  left: 100%;
+}
+
+/* Download Button */
+.download-btn {
+  display: block;
+  text-align: center;
+  background-color: #00a8ff;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  margin: 2rem auto 0;
+  width: fit-content;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 168, 255, 0.3);
+}
+
+.download-btn:hover {
+  background-color: #f1c40f;
+  color: #0d1117;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(241, 196, 15, 0.4);
+}
+
+.download-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.7s ease;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.download-btn:hover::before {
+  left: 100%;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+/* Slide-in Animation */
+@keyframes slideIn {
+  0% {
+      transform: translateY(-50px);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+/* Fade-in Up Animation */
+@keyframes fadeInUp {
+  0% {
+      transform: translateY(20px);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+  .resume-container {
+      padding: 1rem;
+  }
+
+  header h1 {
+      font-size: 2rem;
+  }
+
+  .resume-section h2 {
+      font-size: 1.5rem;
+  }
+
+  .resume-item h3 {
+      font-size: 1.2rem;
+  }
+
+  .download-btn {
+      padding: 0.8rem 1.5rem;
+  }
+}
+/* Custom Cursor */
+.custom-cursor {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: background-color 0.2s ease;
+}
+
+.custom-cursor.active {
+  background-color: #00a8ff;
+}
+
+/* Hide the default cursor */
+body {
+  cursor: none;
+}
+
